@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.22)  13 JAN 2018 23:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.22)  14 JAN 2018 00:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/adrianhsu/Desktop/ans/Final.tex
-(/Users/adrianhsu/Desktop/ans/Final.tex
+**/Users/adrianhsu/Desktop/cuMF-final/tex/Final.tex
+(/Users/adrianhsu/Desktop/cuMF-final/tex/Final.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -2059,6 +2059,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 368--369
 
  []
 
+Package epstopdf Info: Source file: <time.eps>
+(epstopdf)                    date: 2018-01-14 00:18:31
+(epstopdf)                    size: 14339 bytes
+(epstopdf)             Output file: <time-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-01-14 00:21:52
+(epstopdf)                    size: 7546 bytes
+(epstopdf)             Command: <repstopdf --outfile=time-eps-converted-to.pdf 
+time.eps>
+(epstopdf)             \includegraphics on input line 377.
+Package epstopdf Info: Output file is already uptodate.
+<time-eps-converted-to.pdf, id=87, 562.1pt x 421.575pt>
+File: time-eps-converted-to.pdf Graphic file (type pdf)
+
+<use time-eps-converted-to.pdf>
+Package pdftex.def Info: time-eps-converted-to.pdf used on input line 377.
+(pdftex.def)             Requested size: 500.0pt x 375.00114pt.
+ [12]
 Package epstopdf Info: Source file: <rmse.eps>
 (epstopdf)                    date: 2018-01-13 23:41:11
 (epstopdf)                    size: 15127 bytes
@@ -2067,40 +2084,23 @@ Package epstopdf Info: Source file: <rmse.eps>
 (epstopdf)                    size: 7800 bytes
 (epstopdf)             Command: <repstopdf --outfile=rmse-eps-converted-to.pdf 
 rmse.eps>
-(epstopdf)             \includegraphics on input line 376.
+(epstopdf)             \includegraphics on input line 385.
 Package epstopdf Info: Output file is already uptodate.
-<rmse-eps-converted-to.pdf, id=87, 562.1pt x 421.575pt>
+
+<rmse-eps-converted-to.pdf, id=91, 562.1pt x 421.575pt>
 File: rmse-eps-converted-to.pdf Graphic file (type pdf)
 
 <use rmse-eps-converted-to.pdf>
-Package pdftex.def Info: rmse-eps-converted-to.pdf used on input line 376.
+Package pdftex.def Info: rmse-eps-converted-to.pdf used on input line 385.
 (pdftex.def)             Requested size: 500.0pt x 375.00114pt.
- [12]
-Package epstopdf Info: Source file: <time.eps>
-(epstopdf)                    date: 2018-01-13 23:41:14
-(epstopdf)                    size: 15127 bytes
-(epstopdf)             Output file: <time-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-01-13 23:42:15
-(epstopdf)                    size: 7800 bytes
-(epstopdf)             Command: <repstopdf --outfile=time-eps-converted-to.pdf 
-time.eps>
-(epstopdf)             \includegraphics on input line 384.
-Package epstopdf Info: Output file is already uptodate.
-
-<time-eps-converted-to.pdf, id=91, 562.1pt x 421.575pt>
-File: time-eps-converted-to.pdf Graphic file (type pdf)
-
-<use time-eps-converted-to.pdf>
-Package pdftex.def Info: time-eps-converted-to.pdf used on input line 384.
-(pdftex.def)             Requested size: 500.0pt x 375.00114pt.
- [13 <./rmse-eps-converted-to.pdf>]
-Overfull \hbox (8.5566pt too wide) in paragraph at lines 394--397
+ [13 <./time-eps-converted-to.pdf>]
+Overfull \hbox (8.5566pt too wide) in paragraph at lines 395--398
 \OT1/cmr/m/n/12 During our im-ple-men-ta-tion pro-cess and the en-vi-ron-ment s
 et-ting such as in-stalling CBLAS, CUBLAS,
  []
 
-[14 <./time-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 398--404
+[14 <./rmse-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 399--405
 
  []
 
@@ -2111,12 +2111,12 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  17373 strings out of 493014
- 275385 string characters out of 6133351
- 465774 words of memory out of 5000000
+ 275418 string characters out of 6133351
+ 466774 words of memory out of 5000000
  20583 multiletter control sequences out of 15000+600000
  21962 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,13n,49p,10483b,1509s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,13n,49p,10494b,1509s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu51.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu53.pfb></usr/loca
 l/texlive/2016/texmf-dist/fonts/type1/arphic/bsmiu/bsmiu55.pfb></usr/local/texl
@@ -2145,7 +2145,7 @@ texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texl
 ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Final.pdf (15 pages, 556750 bytes).
+Output written on Final.pdf (15 pages, 557126 bytes).
 PDF statistics:
  209 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams

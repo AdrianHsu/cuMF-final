@@ -131,7 +131,7 @@ Now, we will start from paper reading and the following items are what we have d
 \item Write code according to the algorithm in this paper and try to run some bigger data.
 \item Compare the results with different parameters. Although there are some data from the internet file of the code are too big to run for our computers, but we still try to make the other data which are smaller and run them successfully.
 \end{enumerate}
-For the \textbf{item 4 and 5}, we've implemented the \textbf{matlab, C++ CPU version, C++ GPU CUDA verion} of the Projected NMF methods based on some sketchy, fragmented piece of code available on Github, and we will provide links for those references if you're interested. Later on, you can easily see our experimental results and some comparisons with respective to a lot of different parameter settings. You can re-run our experiment based on the \textbf{README} provided in our github repo (\textbf{https://github.com/AdrianHsu/cuMF-final}), which is already attached in the end of this pdf file.\\
+For the \textbf{item 4 and 5}, we've implemented the \textbf{matlab, C++ CPU version, C++ GPU CUDA verion} of the Projected NMF methods based on some sketchy, fragmented piece of code available on Github, and we will provide links for those references if you're interested. Later on, you can easily see our experimental results and some comparisons with respect to a lot of different parameter settings. You can re-run our experiment based on the \textbf{README} provided in our github repo (\textbf{https://github.com/AdrianHsu/cuMF-final}), which is already attached in the end of this pdf file.\\
 Finally we've spent a lot of time dealing with the libraries called \textbf{cuMF-sgd} and \textbf{cuMF-als}, which are the cuda-based libraries that can solve huge problem like Netflix 1GB dataset, or MovieLens 10M dataset. However, the libraries are a bit intricated in that the enviroment set and input data preprocessing, i.e. transform the 3 columns data into COO, CSR format, or binary file in order to speed up.
 %%%%%%%%%%%%%%%%%%%%%%%%%%2
  \section{Paper reading and comprehension}
@@ -310,7 +310,7 @@ As the table shows, we can discover that as R goes larger, the will affect the p
 \end{figure}
 
 \subsection{ how dimension M,N affects the convergence}
-For this experiment, we want to discuss about the correlation between the dimension M, N will affect the number of iterations, and the total time... etc. As the table shows, we find that when M and N is around 100, and then we fix the tolerance, we can see that the Final projForm and Frobenius norm, the value are heavily depend on the M nad M; however, the number of iterations remain almost the same even though the matrix is very large.
+For this experiment, we want to discuss about the correlation between the dimension M, N will affect the number of iterations, and the total time... etc. As the table shows, we find that when M and N is around 100, and then we fix the tolerance, we can see that the Final projForm and Frobenius norm, the value are heavily depend on the M and N; however, the number of iterations remain almost the same even though the matrix is very large.
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=500pt]{dimensionMN.png}
@@ -371,9 +371,10 @@ We can easily discover that the CPU version is performing better than the GPU ve
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%4
 \section{Comparison of cuMF Libraries}
+In this part, we compare the execution time and Root Mean Square Error of cumf\_als and cumf\_sgd library.  The reason why the NMF method is not included is that these two methods required a training dataset and testing dataset to calculate the RMSE.  We encountered some problems when dealing with the dataset transformation between the one used in NMF method and these two methods. Fortunately, the dataset required in these two methods are the same, and the comparisons are shown below.
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=500pt]{rmse.eps}
+        \includegraphics[width=500pt]{time.eps}
           %\caption{}
         \label{fig:arch_02}
     \end{center}
@@ -381,7 +382,7 @@ We can easily discover that the CPU version is performing better than the GPU ve
 In the first plot, we compare the execution time with different R between cumf\_als and cumf\_sgd methods.  It is reasonable that the execution time increase as R become greater because of the data to be processed increase, but surprisingly the execution time seems to have nothing to do with R increase in the SGD method. On the other hand, the execution time by the cumf\_sgd method is overall less than that of the cumf\_als method.
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=500pt]{time.eps}
+        \includegraphics[width=500pt]{rmse.eps}
           %\caption{}
         \label{fig:arch_02}
     \end{center}
@@ -391,15 +392,15 @@ In the second plot, we compare the RMSE(Root Mean Square Error) between the two 
   The reason of this property, we guess, is that when we calculate the $Ax=b$, the singularity of $A$ could approach 0(ill-conditioned).  This may result in the components in $A^{-1}$ becomes large when we take inverse of $A$.  Second, the RMSEs for cumf\_sgd method are larger than that of cumf\_als in small $R$, but it gradually decreases while $R$ increase and approach the RMSEs of cumf\_als, if it doesn’t diverge, of course.
 %%%%%%%%%%%%%%%%%%%%%%%%%%5
  \section{Difficulties and Challenges}
-During our implementation process and the environment setting such as installing CBLAS, CUBLAS, CMAKE...etc, We've encountered a lot of difficulties. Ine problem is that the data type "double" in C/C++ cannot handle such large number, and therefore we slightly modified the data so that it is more adaptable toward our model.\\
-The other problem we've encountered is that we don't have to transform our initial matrix from dense to the sparse one, because we have to admit that we've spent too much time dealing with the environment setting and getting familiar with the c memory allocation, and cuda memory allocation. Therefore if the matrix is too large, such as M = 1E6, and also N = 1E6, and then our matrix cannot contain these data, since that our 2-D array is too small to being performing and multiplication or dot product on them.
+During our implementation process and the environment setting such as installing CBLAS, CUBLAS, CMAKE...etc, We've encountered a lot of difficulties. One problem is that the data type "double" in C/C++ cannot handle such large number, and therefore we slightly modified the data so that it is more adaptable toward our model.\\
+The other problem we've encountered is that we cannot transform our initial matrix from dense to the sparse one, because we have to admit that we've spent too much time dealing with the environment setting and getting familiar with the C and CUDA memory allocation. Therefore if the matrix is too large, such as M = 1E6, and also N = 1E6, and then our matrix cannot contain these data, since that our 2-D array is too small to being performing and multiplication or dot product on them. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%6
 \section{References}
 \textbf{1. Xiaolong Xie, Wei Tan, Liana Fong, Yun Liang, CuMFSGD: Parallelized Stochastic Gradient Descent for Matrix Factorization on GPUs.}
 \\
-\textbf{2. Faster and Cheaper: Parallelizing Large-Scale Matrix Factorization on GPUs. Wei Tan, Liangliang Cao, Liana Fong}.
+\textbf{2. Wei Tan, Liangliang Cao, Liana Fong, Faster and Cheaper: Parallelizing Large-Scale Matrix Factorization on GPUs. }.
 \\
-\textbf{3. NMF.cu}: This code solves NMF by alternative non-negative least squares using projected gradients. It's an implementation of \textbf{Projected gradient methods for non-negative matrix factorization} by CJ Lin. You may read the paper for more details.
+\textbf{3. NMF.cu}: This code solves NMF by alternative non-negative least squares using projected gradients. It's a sketchy version of implementation for \textbf{Projected gradient methods for non-negative matrix factorization} by CJ Lin. You may read the paper for more details.
 \\
 
 \end{CJK} 

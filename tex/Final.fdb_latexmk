@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1515858725 "/Users/adrianhsu/Desktop/ans/Final.tex" "Final.pdf" "Final" 1515858726
-  "/Users/adrianhsu/Desktop/ans/Final.tex" 1515858724 24970 26bce9808cf79a1fb0b39386946e5a97 ""
+["pdflatex"] 1515862368 "/Users/adrianhsu/Desktop/cuMF-final/tex/Final.tex" "Final.pdf" "Final" 1515862369
+  "/Users/adrianhsu/Desktop/cuMF-final/tex/Final.tex" 1515862368 25453 498127d8b7e369acee7018fc5f6d511c ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/arphic/bsmiu/bsmiu51.tfm" 1136768653 1280 278a106360c756bfd37372390de66067 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/arphic/bsmiu/bsmiu53.tfm" 1136768653 1256 a4dc3c42a3c50fad2bec5e9bb63f46fd ""
@@ -189,13 +189,13 @@
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
   "1-1.png" 1515853042 46127 32926d2a12cb6550ccb2548c8e59e79b ""
   "1-2.png" 1515853075 232359 9ff9737b245d50208ed0f91e2234e3ed ""
-  "Final.aux" 1515858726 1542 a3f350d3662dbad9bb94bd274960d262 ""
-  "Final.tex" 1515858724 24970 26bce9808cf79a1fb0b39386946e5a97 ""
+  "Final.aux" 1515862369 1542 b3039b92bcfaac7ed068f1e6351ccea3 ""
+  "Final.tex" 1515862368 25453 498127d8b7e369acee7018fc5f6d511c ""
   "dimensionMN.png" 1515854898 82737 ef25b911c0af904be33e1a148a7aeb3a ""
   "dimensionR.png" 1515853804 75784 f3d413901f959ac5a1ed0c3f2597f841 ""
   "rmse.eps" 1515858071 15127 b19f2d53091e46402f8912d77f0babf9 ""
-  "time.eps" 1515858074 15127 bd0615d840d3f9be648d8b334f50f3aa ""
+  "time.eps" 1515860311 14339 ce29d6f643760b8de505d4e7207dcfcc ""
   (generated)
   "Final.pdf"
-  "Final.aux"
   "Final.log"
+  "Final.aux"
