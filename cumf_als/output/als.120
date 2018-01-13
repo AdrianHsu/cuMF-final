@@ -1,0 +1,440 @@
+M = 17770, N = 480189, F = 120, NNZ = 99072112, NNZ_TEST = 1408395, lambda = 0.048000
+X_BATCH = 1, THETA_BATCH = 4
+DATA_DIR = ./data/netflix/ 
+*******start loading training and testing sets to host.
+
+ loading COO...
+
+ loading CSR...
+
+ loading CSC...
+
+ loading COO Row...
+
+loaded training csr to host; print data, row and col array
+3.0 5.0 4.0 3.0 3.0 4.0 3.0 4.0 3.0 4.0 
+0 524 659 2643 2781 3857 4840 4930 18883 18976 
+0 1 2 4 5 6 7 8 9 10 
+
+loaded testing coo to host; print data, row and col array
+4.0 4.0 3.0 5.0 5.0 4.0 4.0 4.0 3.0 4.0 
+0 0 0 0 0 0 0 0 0 0 
+3 47 59 79 135 149 184 186 190 207 
+*******parameters: m: 17770, n:  480189, f: 120, nnz: 99072112 
+*******start allocating memory on GPU...
+*******start copying memory to GPU...
+*******start iterations...
+---------------------------ALS iteration 0, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.545685 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 1.889881 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.038892 
+update X run 2.476103 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 0, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.280496 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.034047 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.236297 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.669585 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.234279 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.370631 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.221557 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.407678 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.191972 
+update theta run 3.677659 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 0: 0.925586
+--------- Test RMSE in iter 0: 0.997408
+---------------------------ALS iteration 1, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.496256 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 1.894490 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.046339 
+update X run 2.438834 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 1, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.282876 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.041799 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.319703 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.674635 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.317966 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.370639 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.315065 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.407635 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.280736 
+update theta run 4.039956 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 1: 0.916244
+--------- Test RMSE in iter 1: 0.992627
+---------------------------ALS iteration 2, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.493460 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 1.887214 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.048738 
+update X run 2.430916 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 2, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.282327 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.045994 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.335672 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.673661 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.337108 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.371619 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.342166 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.406132 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.325248 
+update theta run 4.149997 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 2: 0.812354
+--------- Test RMSE in iter 2: 0.940327
+---------------------------ALS iteration 3, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.496107 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 1.895298 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.048847 
+update X run 2.442161 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 3, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.282940 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.050839 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.335208 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.676995 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.336111 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.368036 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.342445 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.406745 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.325623 
+update theta run 4.162876 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 3: 0.915821
+--------- Test RMSE in iter 3: 1.046424
+---------------------------ALS iteration 4, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.493681 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 1.900680 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.048862 
+update X run 2.444782 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 4, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.281224 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.053893 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.335301 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.681619 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.336526 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.370645 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.342515 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.407204 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.326916 
+update theta run 4.165664 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 4: 0.805981
+--------- Test RMSE in iter 4: 0.951488
+---------------------------ALS iteration 5, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.493710 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 1.902383 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.048882 
+update X run 2.446653 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 5, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.281428 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.056062 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.334671 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.675814 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.337312 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.370952 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.342496 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.406662 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.324899 
+update theta run 4.159046 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 5: 0.785448
+--------- Test RMSE in iter 5: 1.204669
+---------------------------ALS iteration 6, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.493867 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 1.893284 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.048913 
+update X run 2.437600 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 6, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.284170 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.052841 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.335599 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.675696 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.336985 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.372432 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.342139 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.406201 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.323043 
+update theta run 4.159629 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 6: 3.111225
+--------- Test RMSE in iter 6: 2.162289
+---------------------------ALS iteration 7, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.495773 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 1.899782 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.048906 
+update X run 2.446142 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 7, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.283415 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.052247 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.335352 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.675232 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.336835 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.372550 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.342594 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.406369 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.324367 
+update theta run 4.163978 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 7: 46.108215
+--------- Test RMSE in iter 7: 34.800079
+---------------------------ALS iteration 8, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.502696 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 2.798137 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.048927 
+update X run 3.352277 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 8, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.282704 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.049539 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.335422 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.673531 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.337694 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.369587 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.342126 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.406337 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.326631 
+update theta run 4.158379 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 8: 4.891093
+--------- Test RMSE in iter 8: 1.902530
+---------------------------ALS iteration 9, update X.----------------------------------
+	generate: Y*theta using cusparse.
+	generate: Y*theta run 0.492581 seconds.
+*******batch 0 / 1.*******
+	updateXByBlock kernel.
+	update X kernel run 1.899611 seconds, gridSize: 17770, blockSize 120.
+	CG solver with fp32.
+	invoke updateX with batch_size: 17770, batch_offset: 0..
+	updateX solver run seconds: 0.048734 
+update X run 2.442707 seconds, gridSize: 17770, blockSize 120.
+---------------------------------- ALS iteration 9, update theta ----------------------------------
+	generate: Y'*X using cusparse.
+	generate: Y'*X run 0.283090 seconds.
+*******batch 0 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 1.055285 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 0.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.335029 
+*******batch 1 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.675357 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 120047.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.337635 
+*******batch 2 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.371284 seconds, gridSize: 120047, blockSize 120.
+*******invoke updateTheta with batch_size: 120047, batch_offset: 240094.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.344187 
+*******batch 3 / 4.*******
+	updateThetaByBlock kernel.
+	update Theta kernel run 0.405888 seconds, gridSize: 120048, blockSize 120.
+*******invoke updateTheta with batch_size: 120048, batch_offset: 360141.
+	CG solver with fp32.
+	updateTheta solver run seconds: 0.325541 
+update theta run 4.162521 seconds, gridSize: 480189, blockSize 120.
+Calculate RMSE.
+--------- Train RMSE in iter 9: 0.804549
+--------- Test RMSE in iter 9: 0.987077
+
+doALS takes seconds: 83.077 for F = 120
+
+ALS Done.
